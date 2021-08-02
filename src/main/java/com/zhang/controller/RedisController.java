@@ -151,11 +151,22 @@ public class RedisController {
         return redisUtil.hmset(key, map);
     }
 
+    /**
+     * 获取hashKey对应的所有键值
+     * @param key
+     * @return
+     */
     @GetMapping(value = "hmget")
     public Object hmget(String key){
         return redisUtil.hmget(key);
     }
 
+    /**
+     * 根据key和hashMap的key获取值
+     * @param key
+     * @param item
+     * @return
+     */
     @GetMapping(value = "hget")
     public Object hget(String key,String item){
         return redisUtil.hget(key,item);
